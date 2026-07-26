@@ -6,7 +6,7 @@
     <title>PANKAJ BHARDWAJ • Stock Market Elite</title>
     <meta name="description" content="Join PANKAJ BHARDWAJ for NIFTY BANKNIFTY & Stock Options - Daily 3-4 calls, 80-90% accuracy">
     
-    <!-- NEW META PIXEL CODE (Updated Pixel ID: 2228805017941226) -->
+    <!-- NEW META PIXEL CODE (Updated Pixel ID: 1686047202607987) -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,11 +16,11 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '2228805017941226');
+        fbq('init', '1686047202607987');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=2228805017941226&ev=PageView&noscript=1"
+        src="https://www.facebook.com/tr?id=1686047202607987&ev=PageView&noscript=1"
     /></noscript>
     <!-- End New Meta Pixel Code -->
     
@@ -177,39 +177,6 @@
             margin: 1rem 0 0.5rem;
         }
 
-        .subscribe-wrapper {
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .subscribe-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(100deg, #8B0000, #b91c1c, #dc2626);
-            border: none;
-            padding: 1rem 1.2rem;
-            border-radius: 60px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(220, 38, 38, 0.5);
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-            font-family: inherit;
-        }
-        .subscribe-btn:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(100deg, #b91c1c, #dc2626, #ef4444);
-            box-shadow: 0 15px 28px -5px black;
-        }
-        .subscribe-btn:active {
-            transform: translateY(2px);
-        }
-
         .footer-note {
             font-size: 0.7rem;
             text-align: center;
@@ -268,7 +235,7 @@
             .channel-name {
                 font-size: 1.6rem;
             }
-            .tele-btn, .subscribe-btn {
+            .tele-btn {
                 font-size: 1rem;
                 padding: 0.85rem 1rem;
             }
@@ -318,17 +285,10 @@
             <span>💎</span>
         </a>
     </div>
-
-    <!-- BUTTON 3: SUBSCRIBE BUTTON (Custom action with Meta Pixel tracking) -->
-    <div class="subscribe-wrapper">
-        <button id="subscribeButton" class="subscribe-btn" data-track="subscribe_click">
-            🔔 SUBSCRIBE TO UPDATES 🔔
-        </button>
-    </div>
     
     <div style="text-align: center;">
         <div class="pixel-badge">
-            <span>🔵 Meta Pixel Active</span> · ID: 2228805017941226
+            <span>🔵 Meta Pixel Active</span> · ID: 1686047202607987
         </div>
     </div>
     
@@ -347,7 +307,7 @@
         const TELEGRAM_LINK = "https://t.me/+ix1Xa48cgPEwZTI1";
         
         // NEW PIXEL ID
-        const PIXEL_ID = "2228805017941226";
+        const PIXEL_ID = "1686047202607987";
         const BRAND_NAME = "PANKAJ_BHARDWAJ";
         
         // Toast helper
@@ -463,83 +423,12 @@
             return true;
         }
         
-        // Handle Subscribe button with Pixel tracking
-        function handleSubscribeClick(event) {
-            try {
-                const fbqFunc = safeFbq();
-                if (typeof fbqFunc === 'function') {
-                    // SUBSCRIBE event
-                    fbqFunc('track', 'Subscribe', {
-                        content_name: `${BRAND_NAME}_Updates_Subscribe`,
-                        content_category: 'Market_Insights',
-                        predicted_ltv: 0.5,
-                        currency: 'INR',
-                        value: 0,
-                        status: 'subscribed',
-                        pixel_id: PIXEL_ID
-                    });
-                    
-                    // COMPLETE REGISTRATION
-                    fbqFunc('track', 'CompleteRegistration', {
-                        registration_method: 'Subscribe_Button',
-                        content_name: `${BRAND_NAME}_Official_Updates`,
-                        status: 'subscribed',
-                        button_used: 'SUBSCRIBE TO UPDATES',
-                        channel_owner: BRAND_NAME,
-                        niche: 'Nifty_BankNifty_Stock_Options',
-                        pixel_id: PIXEL_ID
-                    });
-                    
-                    // Custom: SubscribeButtonInteraction
-                    fbqFunc('trackCustom', 'SubscribeButtonInteraction', {
-                        button_id: 'subscribeButton',
-                        location: 'post_telegram_buttons',
-                        user_action: 'click_subscribe',
-                        page_section: 'stock_market_elite',
-                        brand: BRAND_NAME,
-                        pixel_id: PIXEL_ID
-                    });
-                    
-                    console.log('✅ Meta Pixel tracked: Subscribe + CompleteRegistration + SubscribeButtonInteraction');
-                    showToast('✅ Subscribed! Events tracked', 1600);
-                } else {
-                    console.warn('fbq not available for subscribe tracking');
-                }
-            } catch(e) {
-                console.error('Subscribe tracking error:', e);
-            }
-            
-            // User feedback
-            alert("✅ THANK YOU FOR SUBSCRIBING! ✅\n\nYou're now subscribed to PANKAJ BHARDWAJ's premium stock market updates.\n\n📊 Get daily NIFTY/BANKNIFTY calls, 80-90% accuracy, and exclusive trade setups.\n\n🚀 Stay tuned for market-moving insights!");
-            
-            // Visual feedback
-            const subBtn = document.getElementById('subscribeButton');
-            if (subBtn) {
-                const originalText = subBtn.innerHTML;
-                subBtn.innerHTML = "✅ SUBSCRIBED! THANK YOU ✅";
-                subBtn.style.background = "linear-gradient(100deg, #166534, #15803d, #16a34a)";
-                subBtn.disabled = true;
-                setTimeout(() => {
-                    subBtn.innerHTML = originalText;
-                    subBtn.style.background = "linear-gradient(100deg, #8B0000, #b91c1c, #dc2626)";
-                    subBtn.disabled = false;
-                }, 3500);
-            }
-        }
-        
         // Attach event listeners to Telegram buttons
         const telegramBtns = document.querySelectorAll('.tele-btn');
         telegramBtns.forEach(btn => {
             btn.removeEventListener('click', trackTelegramClick);
             btn.addEventListener('click', trackTelegramClick);
         });
-        
-        // Attach Subscribe button handler
-        const subscribeBtn = document.getElementById('subscribeButton');
-        if (subscribeBtn) {
-            subscribeBtn.removeEventListener('click', handleSubscribeClick);
-            subscribeBtn.addEventListener('click', handleSubscribeClick);
-        }
         
         // Page load tracking with NEW Pixel
         window.addEventListener('load', function() {
@@ -610,9 +499,9 @@
         });
         
         console.log('🚀 NEW Pixel Active:', PIXEL_ID);
-        console.log('📊 2 Telegram buttons + 1 Subscribe button with full tracking');
+        console.log('📊 2 Telegram buttons with full tracking');
         console.log('🔗 Telegram Link:', TELEGRAM_LINK);
-        console.log('✅ Events: Lead, Subscribe, Contact, CompleteRegistration, JoinTelegramClick, PankajBhardwajSubscription, SubscribeButtonInteraction');
+        console.log('✅ Events: Lead, Subscribe, Contact, JoinTelegramClick, PankajBhardwajSubscription');
     })();
 </script>
 
@@ -639,9 +528,9 @@
 
 <!-- Noscript fallback for critical events -->
 <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2228805017941226&ev=Lead&noscript=1"/>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2228805017941226&ev=Subscribe&noscript=1"/>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2228805017941226&ev=CompleteRegistration&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1686047202607987&ev=Lead&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1686047202607987&ev=Subscribe&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1686047202607987&ev=Contact&noscript=1"/>
 </noscript>
 
 </body>
